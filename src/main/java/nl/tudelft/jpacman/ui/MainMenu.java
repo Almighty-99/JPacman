@@ -13,7 +13,7 @@ import java.io.IOException;
 public class MainMenu {
     public static void main(String s[]) {
 
-        JFrame frame = new JFrame("Main Menu");
+        JFrame frame = new JFrame("Level");
         Color bgColor = Color.YELLOW;
         frame.getContentPane().setBackground(bgColor);
         frame.setLayout(new GridBagLayout());
@@ -21,7 +21,7 @@ public class MainMenu {
 
 
         JLabel headerLabel = new JLabel("PacMan");
-        headerLabel.setFont(new Font("UglyByte", Font.TYPE1_FONT, 50));
+        headerLabel.setFont(new Font("UglyByte.otf", Font.TYPE1_FONT, 50));
         frame.add(headerLabel, new GridBagConstraints());
         Color headerTextColor = Color.BLACK;
         headerLabel.setForeground(headerTextColor);
