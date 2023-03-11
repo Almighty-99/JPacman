@@ -47,6 +47,7 @@ public abstract class Game implements LevelObserver {
      */
     public void start() {
         synchronized (progressLock) {
+
             if (isInProgress()) {
                 return;
             }
@@ -54,6 +55,7 @@ public abstract class Game implements LevelObserver {
                 inProgress = true;
                 getLevel().addObserver(this);
                 getLevel().start();
+
             }
         }
     }

@@ -23,11 +23,11 @@ import java.util.List;
  * @author Jeroen Roosen
  */
 @SuppressWarnings("PMD.TooManyMethods")
-public class Launcher3 {
+public class Launcher5 {
 
     private static final PacManSprites SPRITE_STORE = new PacManSprites();
 
-    public static final String DEFAULT_MAP = "/board3Launcher3.txt";
+    public static final String DEFAULT_MAP = "/board5.txt";
     private String levelMap = DEFAULT_MAP;
 
     private PacManUI pacManUI;
@@ -57,7 +57,7 @@ public class Launcher3 {
      *            Map to be used.
      * @return Level corresponding to the given map.
      */
-    public Launcher3 withMapFile(String fileName) {
+    public Launcher5 withMapFile(String fileName) {
         levelMap = fileName;
         return this;
     }
@@ -204,6 +204,6 @@ public class Launcher3 {
      *             When a resource could not be read.
      */
     public static void main(String[] args) throws IOException {
-        new Launcher3().launch();
+        new Launcher5().launch();
     }
 }

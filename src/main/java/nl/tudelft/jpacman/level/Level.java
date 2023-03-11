@@ -272,7 +272,12 @@ public class Level {
             for (LevelObserver observer : observers) {
                 observer.levelWon();
             }
+            loadNextLevel(); // call method to load next level/map
         }
+    }
+
+    private void loadNextLevel() {
+        // code to load next level/map goes here
     }
 
     /**
@@ -358,6 +363,12 @@ public class Level {
      *
      * @author Jeroen Roosen
      */
+    public static final String DEFAULT_MAP = "/board2.txt";
+    private String levelMap = DEFAULT_MAP;
+    public Level withMapFile(String fileName) {
+        levelMap = fileName;
+        return this;
+    }
     public interface LevelObserver {
 
         /**

@@ -18,6 +18,7 @@ import nl.tudelft.jpacman.points.PointCalculator;
 import nl.tudelft.jpacman.points.PointCalculatorLoader;
 import nl.tudelft.jpacman.sprite.PacManSprites;
 import nl.tudelft.jpacman.ui.Action;
+import nl.tudelft.jpacman.ui.MainMenu;
 import nl.tudelft.jpacman.ui.PacManUI;
 import nl.tudelft.jpacman.ui.PacManUiBuilder;
 
@@ -31,7 +32,7 @@ public class Launcher {
 
     private static final PacManSprites SPRITE_STORE = new PacManSprites();
 
-    public static final String DEFAULT_MAP = "/board.txt";
+    public static final String DEFAULT_MAP = "/board1.txt";
     private String levelMap = DEFAULT_MAP;
 
     private PacManUI pacManUI;

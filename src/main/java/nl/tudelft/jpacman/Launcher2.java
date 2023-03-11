@@ -1,26 +1,21 @@
 package nl.tudelft.jpacman;
 
-import java.awt.event.KeyEvent;
-import java.io.IOException;
-import java.util.List;
-
 import nl.tudelft.jpacman.board.BoardFactory;
 import nl.tudelft.jpacman.board.Direction;
 import nl.tudelft.jpacman.game.Game;
 import nl.tudelft.jpacman.game.GameFactory;
-import nl.tudelft.jpacman.level.Level;
-import nl.tudelft.jpacman.level.LevelFactory;
-import nl.tudelft.jpacman.level.MapParser;
-import nl.tudelft.jpacman.level.Player;
-import nl.tudelft.jpacman.level.PlayerFactory;
+import nl.tudelft.jpacman.level.*;
 import nl.tudelft.jpacman.npc.ghost.GhostFactory;
 import nl.tudelft.jpacman.points.PointCalculator;
 import nl.tudelft.jpacman.points.PointCalculatorLoader;
 import nl.tudelft.jpacman.sprite.PacManSprites;
 import nl.tudelft.jpacman.ui.Action;
-import nl.tudelft.jpacman.ui.MainMenu;
 import nl.tudelft.jpacman.ui.PacManUI;
 import nl.tudelft.jpacman.ui.PacManUiBuilder;
+
+import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.util.List;
 
 /**
  * Creates and launches the JPacMan UI.
@@ -28,11 +23,11 @@ import nl.tudelft.jpacman.ui.PacManUiBuilder;
  * @author Jeroen Roosen
  */
 @SuppressWarnings("PMD.TooManyMethods")
-public class Launcher {
+public class Launcher2 {
 
     private static final PacManSprites SPRITE_STORE = new PacManSprites();
 
-    public static final String DEFAULT_MAP = "/board1.txt";
+    public static final String DEFAULT_MAP = "/board2.txt";
     private String levelMap = DEFAULT_MAP;
 
     private PacManUI pacManUI;
@@ -62,7 +57,7 @@ public class Launcher {
      *            Map to be used.
      * @return Level corresponding to the given map.
      */
-    public Launcher withMapFile(String fileName) {
+    public Launcher2 withMapFile(String fileName) {
         levelMap = fileName;
         return this;
     }
@@ -209,6 +204,6 @@ public class Launcher {
      *             When a resource could not be read.
      */
     public static void main(String[] args) throws IOException {
-        new Launcher().launch();
+        new Launcher2().launch();
     }
 }
