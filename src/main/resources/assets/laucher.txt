@@ -1,0 +1,22 @@
+private Level makeLevel_3() {
+        try {
+            return getMapParser().parseMap("/board3.txt");
+        } catch (IOException e) {
+            throw new PacmanConfigurationException(
+                "Unable to create level, name = " + "/board3.txt", e);
+        }
+    }
+    public void launch_theme3(){
+        makeTheme_3();
+        PacManUiBuilder builder = new PacManUiBuilder().withDefaultButtons();
+        addSinglePlayerKeys(builder);
+        pacManTheme3 = builder.build(getGame());
+        pacManTheme3.start();
+
+    }
+    private Game makeTheme_3(){
+        GameFactory gf = getGameFactory();
+        Level  level = makeLevel_3();
+        game = gf.createSinglePlayerGame(level, loadPointCalculator());
+        return game;
+    }

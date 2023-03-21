@@ -83,7 +83,7 @@ public class Theme {
                 setTheme_(2);
                 frame.dispose();
                 try {
-                    Launcher2.main(null);
+                    Launcher.main(null);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -95,7 +95,7 @@ public class Theme {
                 setTheme_(3);
                 frame.dispose();
                 try {
-                    Launcher3.main(null);
+                    Launcher.main(null);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -107,7 +107,7 @@ public class Theme {
                 setTheme_(4);
                 frame.dispose();
                 try {
-                    Launcher4.main(null);
+                    Launcher.main(null);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -119,7 +119,7 @@ public class Theme {
                 setTheme_(5);
                 frame.dispose();
                 try {
-                    Launcher5.main(null);
+                    Launcher.main(null);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }

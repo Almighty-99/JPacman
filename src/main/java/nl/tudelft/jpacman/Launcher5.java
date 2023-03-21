@@ -32,6 +32,11 @@ public class Launcher5 {
 
     private PacManUI pacManUI;
     private Game game;
+    private PacManUI pacManTheme1;
+    private PacManUI pacManTheme2;
+    private PacManUI pacManTheme3;
+    private PacManUI pacManTheme4;
+    private PacManUI pacManTheme5;
 
     /**
      * @return The game object this launcher will start when {@link #launch()}
@@ -204,6 +209,94 @@ public class Launcher5 {
      *             When a resource could not be read.
      */
     public static void main(String[] args) throws IOException {
-        new Launcher5().launch();
+        new Launcher5().launch_theme5();
+    }
+    private Level makeLevel_2() {
+        try {
+            return getMapParser().parseMap("/board2.txt");
+        } catch (IOException e) {
+            throw new PacmanConfigurationException(
+                "Unable to create level, name = " + "/.txt", e);
+        }
+    }
+    public void launch_theme2(){
+        makeTheme_2();
+        PacManUiBuilder builder = new PacManUiBuilder().withDefaultButtons();
+        addSinglePlayerKeys(builder);
+        pacManTheme2 = builder.build(getGame());
+        pacManTheme2.start();
+
+    }
+    private Game makeTheme_2(){
+        GameFactory gf = getGameFactory();
+        Level  level = makeLevel_2();
+        game = gf.createSinglePlayerGame(level, loadPointCalculator());
+        return game;
+    }
+    private Level makeLevel_3() {
+        try {
+            return getMapParser().parseMap("/board3.txt");
+        } catch (IOException e) {
+            throw new PacmanConfigurationException(
+                "Unable to create level, name = " + "/.txt", e);
+        }
+    }
+    public void launch_theme3(){
+        makeTheme_3();
+        PacManUiBuilder builder = new PacManUiBuilder().withDefaultButtons();
+        addSinglePlayerKeys(builder);
+        pacManTheme3 = builder.build(getGame());
+        pacManTheme3.start();
+
+    }
+    private Game makeTheme_3(){
+        GameFactory gf = getGameFactory();
+        Level  level = makeLevel_3();
+        game = gf.createSinglePlayerGame(level, loadPointCalculator());
+        return game;
+    }
+    private Level makeLevel_4() {
+        try {
+            return getMapParser().parseMap("/board4.txt");
+        } catch (IOException e) {
+            throw new PacmanConfigurationException(
+                "Unable to create level, name = " + "/.txt", e);
+        }
+    }
+    public void launch_theme4(){
+        makeTheme_4();
+        PacManUiBuilder builder = new PacManUiBuilder().withDefaultButtons();
+        addSinglePlayerKeys(builder);
+        pacManTheme4 = builder.build(getGame());
+        pacManTheme4.start();
+
+    }
+    private Game makeTheme_4(){
+        GameFactory gf = getGameFactory();
+        Level  level = makeLevel_4();
+        game = gf.createSinglePlayerGame(level, loadPointCalculator());
+        return game;
+    }
+    private Level makeLevel_5() {
+        try {
+            return getMapParser().parseMap("/board5.txt");
+        } catch (IOException e) {
+            throw new PacmanConfigurationException(
+                "Unable to create level, name = " + "/.txt", e);
+        }
+    }
+    public void launch_theme5(){
+        makeTheme_5();
+        PacManUiBuilder builder = new PacManUiBuilder().withDefaultButtons();
+        addSinglePlayerKeys(builder);
+        pacManTheme5 = builder.build(getGame());
+        pacManTheme5.start();
+
+    }
+    private Game makeTheme_5(){
+        GameFactory gf = getGameFactory();
+        Level  level = makeLevel_5();
+        game = gf.createSinglePlayerGame(level, loadPointCalculator());
+        return game;
     }
 }

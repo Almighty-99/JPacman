@@ -75,7 +75,7 @@ public abstract class Game implements LevelObserver {
         }
     }
     public void restart() {
-        inProgress = false;
+        stop();
         Map.main(null);
     }
     public void menu() {
