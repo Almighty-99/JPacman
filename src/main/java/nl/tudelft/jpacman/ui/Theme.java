@@ -9,6 +9,17 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class Theme {
+
+    private static int theme_;
+
+    public static  int getTheme_(){
+        return  theme_;
+    }
+
+    public static void setTheme_(int theme_) {
+        Theme.theme_ = theme_;
+    }
+
     public static void main(String s[]){
         JFrame frame = new JFrame("Theme");
         Color bgColor = Color.BLACK;
@@ -57,13 +68,19 @@ public class Theme {
 
         level1Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                setTheme_(1);
                 frame.dispose();
-                Map.main(null);
+                try {
+                    Launcher.main(null);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 
         level2Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                setTheme_(2);
                 frame.dispose();
                 try {
                     Launcher2.main(null);
@@ -75,6 +92,7 @@ public class Theme {
 
         level3Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                setTheme_(3);
                 frame.dispose();
                 try {
                     Launcher3.main(null);
@@ -86,6 +104,7 @@ public class Theme {
 
         level4Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                setTheme_(4);
                 frame.dispose();
                 try {
                     Launcher4.main(null);
@@ -97,6 +116,7 @@ public class Theme {
 
         level5Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                setTheme_(5);
                 frame.dispose();
                 try {
                     Launcher5.main(null);

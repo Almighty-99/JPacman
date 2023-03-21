@@ -18,6 +18,7 @@ import nl.tudelft.jpacman.points.PointCalculator;
 import nl.tudelft.jpacman.points.PointCalculatorLoader;
 import nl.tudelft.jpacman.sprite.PacManSprites;
 import nl.tudelft.jpacman.ui.Action;
+import nl.tudelft.jpacman.ui.MainMenu;
 import nl.tudelft.jpacman.ui.PacManUI;
 import nl.tudelft.jpacman.ui.PacManUiBuilder;
 
@@ -208,6 +209,27 @@ public class Launcher {
      *             When a resource could not be read.
      */
     public static void main(String[] args) throws IOException {
-        new Launcher().launch();
+        new MainMenu();
+    }
+
+    private Level makeLevel_1() {
+        try {
+            return getMapParser().parseMap("/board1.txt");
+        } catch (IOException e) {
+            throw new PacmanConfigurationException(
+                "Unable to create level, name = " + "/board1.txt", e);
+        }
+    }
+    public void launch_theme1(){
+        makeTheme_1();
+        PacManUiBuilder builder = new PacManUiBuilder().withDefaultButtons();
+        addSinglePlayerKeys(builder);
+
+    }
+    private Game makeTheme_1(){
+        GameFactory gf = getGameFactory();
+        Level  level = makeLevel_1();
+        game = gf.createSinglePlayerGame(level, loadPointCalculator());
+        return game;
     }
 }

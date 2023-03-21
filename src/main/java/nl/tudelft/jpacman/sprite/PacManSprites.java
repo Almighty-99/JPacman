@@ -7,6 +7,9 @@ import java.util.Map;
 import nl.tudelft.jpacman.PacmanConfigurationException;
 import nl.tudelft.jpacman.board.Direction;
 import nl.tudelft.jpacman.npc.ghost.GhostColor;
+import nl.tudelft.jpacman.ui.Theme;
+
+
 
 /**
  * Sprite Store containing the classic Pac-Man sprites.
@@ -14,6 +17,8 @@ import nl.tudelft.jpacman.npc.ghost.GhostColor;
  * @author Jeroen Roosen 
  */
 public class PacManSprites extends SpriteStore {
+
+    Theme themeSelector;
 
     /**
      * The sprite files are vertically stacked series for each direction, this
@@ -55,13 +60,30 @@ public class PacManSprites extends SpriteStore {
      * @return A map of animated Pac-Man sprites for all directions.
      */
     public Map<Direction, Sprite> getPacmanSprites() {
-        return directionSprite("/sprite/pacman.png", PACMAN_ANIMATION_FRAMES);
+        if (themeSelector.getTheme_() == 1) {
+            return directionSprite("/sprite/pacman.png", PACMAN_ANIMATION_FRAMES);
+        }
+        if (themeSelector.getTheme_() == 2) {
+            return directionSprite("/sprite/Theme_Sea/monkey_sea.png", PACMAN_ANIMATION_FRAMES);
+        }
+        if (themeSelector.getTheme_() == 3) {
+            return directionSprite("/sprite/pacman.png", PACMAN_ANIMATION_FRAMES);
+        }
+        if (themeSelector.getTheme_() == 4) {
+            return directionSprite("/sprite/Theme_Space/pacman_space.png", PACMAN_ANIMATION_FRAMES);
+        }
+        else  {
+            return directionSprite("/sprite/Theme_CatDog/pacman_catdog.png", PACMAN_ANIMATION_FRAMES);
+        }
+
     }
 
     /**
      * @return The animation of a dying Pac-Man.
      */
     public AnimatedSprite getPacManDeathAnimation() {
+
+
         String resource = "/sprite/dead.png";
 
         Sprite baseImage = loadSprite(resource);
@@ -106,31 +128,90 @@ public class PacManSprites extends SpriteStore {
      */
     public Map<Direction, Sprite> getGhostSprite(GhostColor color) {
         assert color != null;
-
-        String resource = "/sprite/ghost_" + color.name().toLowerCase()
-            + ".png";
-        return directionSprite(resource, GHOST_ANIMATION_FRAMES);
+        if(themeSelector.getTheme_() == 1) {
+            String resource = "/sprite/ghost_" + color.name().toLowerCase()
+                + ".png";
+            return directionSprite(resource, GHOST_ANIMATION_FRAMES);
+        }
+        if(themeSelector.getTheme_() == 2) {
+            String resource = "/sprite/Theme_Sea/ghost_" + color.name().toLowerCase()
+                +"_sea"+ ".png";
+            return directionSprite(resource, GHOST_ANIMATION_FRAMES);
+        }
+        if(themeSelector.getTheme_() == 3) {
+            String resource = "/sprite/Theme_Dinosaur/ghost_" + color.name().toLowerCase()
+                +"_dinosaur"+ ".png";
+            return directionSprite(resource, GHOST_ANIMATION_FRAMES);
+        }
+        if(themeSelector.getTheme_() == 4) {
+            String resource = "/sprite/Theme_Space/ghost_" + color.name().toLowerCase()
+                +"_space"+ ".png";
+            return directionSprite(resource, GHOST_ANIMATION_FRAMES);
+        }else{
+            String resource = "/sprite/Theme_CatDog/ghost_" + color.name().toLowerCase()
+                +"_catdog"+ ".png";
+            return directionSprite(resource, GHOST_ANIMATION_FRAMES);
+        }
     }
 
     /**
      * @return The sprite for the wall.
      */
     public Sprite getWallSprite() {
-        return loadSprite("/sprite/wall.png");
+        if (themeSelector.getTheme_() == 1){
+            return loadSprite("/sprite/wall.png");
+        }
+        if (themeSelector.getTheme_() == 2){
+            return loadSprite("/sprite/Theme_Sea/wall_sea.png");
+        }
+        if (themeSelector.getTheme_() == 3){
+            return loadSprite("/sprite/Theme_Dinosaur/wall_dinosour.png");
+        }
+        if (themeSelector.getTheme_() == 4){
+            return loadSprite("/sprite/Theme_Space/wall_space.png");
+        }
+        else
+        return loadSprite("/sprite/Theme_CatDog/wall_catdog.png");
     }
 
     /**
      * @return The sprite for the ground.
      */
     public Sprite getGroundSprite() {
-        return loadSprite("/sprite/floor.png");
+        if (themeSelector.getTheme_() == 1){
+            return loadSprite("/sprite/floor.png");
+        }
+        if (themeSelector.getTheme_() == 2){
+            return loadSprite("/sprite/Theme_Sea/floor_sea.png");
+        }
+        if (themeSelector.getTheme_() == 3){
+            return loadSprite("/sprite/Theme_Dinosaur/floor_dinosour.png");
+        }
+        if (themeSelector.getTheme_() == 4){
+            return loadSprite("/sprite/Theme_Space/floor_space.png");
+        }
+        else
+        return loadSprite("/sprite/Theme_CatDog/floor_catdog.png");
     }
 
     /**
      * @return The sprite for the
      */
     public Sprite getPelletSprite() {
-        return loadSprite("/sprite/pellet.png");
+        if (themeSelector.getTheme_() == 1){
+            return loadSprite("/sprite/pellet.png");
+        }
+        if (themeSelector.getTheme_() == 2){
+            return loadSprite("/sprite/Theme_Sea/pellet_sea.png");
+        }
+        if (themeSelector.getTheme_() == 3){
+            return loadSprite("/sprite/Theme_Dinosaur/pellet_dinosour.png");
+        }
+        if (themeSelector.getTheme_() == 4){
+            return loadSprite("/sprite/Theme_Space/pellet_space.png");
+        }
+        else
+        return loadSprite("/sprite/Theme_CatDog/pellet_catdog.png");
     }
 
     /**
