@@ -63,55 +63,35 @@ public class Map {
         level1Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                try {
-                    Launcher.main(null);
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                Theme.main(null);
             }
         });
 
         level2Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                try {
-                    Launcher2.main(null);
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                Theme.main(null);
             }
         });
 
         level3Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                try {
-                    Launcher3.main(null);
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                Theme.main(null);
             }
         });
 
         level4Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                try {
-                    Launcher4.main(null);
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                Theme.main(null);
             }
         });
 
         level5Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                try {
-                    Launcher5.main(null);
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                Theme.main(null);
             }
         });
 

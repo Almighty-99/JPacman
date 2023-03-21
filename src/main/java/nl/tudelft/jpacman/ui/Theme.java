@@ -21,11 +21,11 @@ public class Theme {
         Color headerTextColor = Color.WHITE;
         headerLabel.setForeground(headerTextColor);
 
-        JButton level1Button = new JButton(new ImageIcon("src/main/resources/assets/level1Button.png"));
-        JButton level2Button = new JButton(new ImageIcon("src/main/resources/assets/level2Button.png"));
-        JButton level3Button = new JButton(new ImageIcon("src/main/resources/assets/level3Button.png"));
-        JButton level4Button = new JButton(new ImageIcon("src/main/resources/assets/level4Button.png"));
-        JButton level5Button = new JButton(new ImageIcon("src/main/resources/assets/level5Button.png"));
+        JButton level1Button = new JButton(new ImageIcon("src/main/resources/assets/og.png"));
+        JButton level2Button = new JButton(new ImageIcon("src/main/resources/assets/sea.png"));
+        JButton level3Button = new JButton(new ImageIcon("src/main/resources/assets/dinosaur.png"));
+        JButton level4Button = new JButton(new ImageIcon("src/main/resources/assets/space.png"));
+        JButton level5Button = new JButton(new ImageIcon("src/main/resources/assets/catdog.png"));
         JButton quitButton = new JButton(new ImageIcon("src/main/resources/assets/quitButton.png"));
 
         level1Button.setBorderPainted(false);
@@ -129,24 +129,27 @@ public class Theme {
 
         gbc.gridy = 1;
         gbc.weighty = 0.5;
-        gbc.anchor = GridBagConstraints.LAST_LINE_END;
+        gbc.anchor = GridBagConstraints.PAGE_START;
         frame.add(level2Button, gbc);
 
-        gbc.gridy = 2;
+        gbc.gridy = 1;
+        gbc.weighty = 0.5;
+        gbc.anchor = GridBagConstraints.LAST_LINE_END;
+        frame.add(level3Button, gbc);
+
+        gbc.gridy = 3;
         gbc.weighty = 0.5;
         gbc.anchor = GridBagConstraints.LAST_LINE_START;
-        frame.add(level3Button, gbc);
+        frame.add(level4Button, gbc);
+
+        gbc.gridy = 3;
+        gbc.weighty = 0.5;
+        gbc.anchor = GridBagConstraints.LAST_LINE_END;
+        frame.add(level5Button, gbc);
 
         gbc.gridy = 4;
         gbc.weighty = 0.5;
-        frame.add(level4Button, gbc);
-
-        gbc.gridy = 5;
-        gbc.weighty = 0.5;
-        frame.add(level5Button, gbc);
-
-        gbc.gridy = 6;
-        gbc.weighty = 0.5;
+        gbc.anchor = GridBagConstraints.CENTER;
         frame.add(quitButton, gbc);
 
         frame.setSize(600, 600);
