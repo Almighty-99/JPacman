@@ -123,7 +123,7 @@ public class Theme {
 
         gbc.gridy = 1;
         gbc.weighty = 0.5;
-        gbc.anchor = GridBagConstraints.LAST_LINE_START;
+        gbc.anchor = GridBagConstraints.FIRST_LINE_START;
         frame.add( level1Button, gbc);
 
 
@@ -134,7 +134,7 @@ public class Theme {
 
         gbc.gridy = 1;
         gbc.weighty = 0.5;
-        gbc.anchor = GridBagConstraints.LAST_LINE_END;
+        gbc.anchor = GridBagConstraints.FIRST_LINE_END;
         frame.add(level3Button, gbc);
 
         gbc.gridy = 3;
