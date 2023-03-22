@@ -10,17 +10,29 @@ import java.io.IOException;
 
 public class MainMenu {
     public static void main(String s[]) {
+        Dimension size = new Dimension(400,400);
         JFrame frame = new JFrame("Menu");
-        Color bgColor = Color.YELLOW;
-        frame.getContentPane().setBackground(bgColor);
-        frame.setLayout(new GridBagLayout());
-        //try {
-        //    frame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("src/main/resources/assets/pacmanbg.png")))));
-        //} catch (IOException e) {
-           // e.printStackTrace();
-        //}
-        //frame.pack();
-        //frame.setVisible(true);
+        JLabel lb = new JLabel();
+        JLabel lb1 = new JLabel();
+        lb.setText("PACMAN");
+        lb.setSize(200,200);
+        lb1.setText("PACMAN");
+        frame.add(lb);
+        frame.add(lb1);
+        frame.setLayout(new FlowLayout());
+        try {
+            frame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("src/main/resources/assets/pacmanbg.png")))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        frame.setLayout(new FlowLayout());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(size);
+        frame.setResizable(true);
+        frame.setVisible(true);
+
+
 
         JButton startButton = new JButton(new ImageIcon("src/main/resources/assets/startButton.png"));
         JButton quitButton = new JButton(new ImageIcon("src/main/resources/assets/quitButton.png"));
@@ -53,12 +65,15 @@ public class MainMenu {
         gbc.weighty = 1;
         gbc.anchor = GridBagConstraints.CENTER;
 
+
         gbc.gridy = 1;
         gbc.weighty = 0.5;
+        gbc.anchor = GridBagConstraints.PAGE_START;
         frame.add(startButton, gbc);
 
         gbc.gridy = 2;
         gbc.weighty = 0.5;
+        gbc.anchor = GridBagConstraints.PAGE_END;
         frame.add(quitButton, gbc);
 
         frame.setSize(600, 600);
