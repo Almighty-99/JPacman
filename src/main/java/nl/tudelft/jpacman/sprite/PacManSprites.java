@@ -67,7 +67,7 @@ public class PacManSprites extends SpriteStore {
             return directionSprite("/sprite/Theme_Sea/monkey_sea.png", PACMAN_ANIMATION_FRAMES);
         }
         if (themeSelector.getTheme_() == 3) {
-            return directionSprite("/sprite/pacman.png", PACMAN_ANIMATION_FRAMES);
+            return directionSprite("/sprite/Theme_Dinosaur/pacman_dinosaur.png", PACMAN_ANIMATION_FRAMES);
         }
         if (themeSelector.getTheme_() == 4) {
             return directionSprite("/sprite/Theme_Space/pacman_space.png", PACMAN_ANIMATION_FRAMES);
