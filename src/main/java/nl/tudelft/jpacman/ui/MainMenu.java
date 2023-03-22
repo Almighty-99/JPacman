@@ -12,13 +12,7 @@ public class MainMenu {
     public static void main(String s[]) {
         Dimension size = new Dimension(400,400);
         JFrame frame = new JFrame("Menu");
-        JLabel lb = new JLabel();
-        JLabel lb1 = new JLabel();
-        lb.setText("PACMAN");
-        lb.setSize(200,200);
-        lb1.setText("PACMAN");
-        frame.add(lb);
-        frame.add(lb1);
+
         frame.setLayout(new FlowLayout());
         try {
             frame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("src/main/resources/assets/pacmanbg.png")))));
@@ -31,6 +25,7 @@ public class MainMenu {
         frame.setSize(size);
         frame.setResizable(true);
         frame.setVisible(true);
+        frame.setLayout(new GridBagLayout());
 
 
 
@@ -68,12 +63,10 @@ public class MainMenu {
 
         gbc.gridy = 1;
         gbc.weighty = 0.5;
-        gbc.anchor = GridBagConstraints.PAGE_START;
         frame.add(startButton, gbc);
 
         gbc.gridy = 2;
         gbc.weighty = 0.5;
-        gbc.anchor = GridBagConstraints.PAGE_END;
         frame.add(quitButton, gbc);
 
         frame.setSize(600, 600);

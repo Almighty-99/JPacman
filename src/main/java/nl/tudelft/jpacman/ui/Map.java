@@ -2,10 +2,12 @@ package nl.tudelft.jpacman.ui;
 
 import nl.tudelft.jpacman.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 
 
@@ -13,9 +15,16 @@ import java.io.IOException;
 public class Map {
     public static void main(String s[]) {
 
-        JFrame frame = new JFrame("Map");
-        Color bgColor = Color.YELLOW;
-        frame.getContentPane().setBackground(bgColor);
+        Dimension size = new Dimension(400,400);
+        JFrame frame = new JFrame("Menu");
+
+        frame.setLayout(new FlowLayout());
+        try {
+            frame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("src/main/resources/assets/pacmanbg.png")))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        frame.setVisible(true);
         frame.setLayout(new GridBagLayout());
 
 
