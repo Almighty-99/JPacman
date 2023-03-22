@@ -20,10 +20,10 @@ public class MainMenu {
             throw new RuntimeException(e);
         }
 
-        frame.setLayout(new FlowLayout());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(size);
-        frame.setResizable(true);
+        //frame.setLayout(new FlowLayout());
+        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //frame.setSize(size);
+        //frame.setResizable(true);
         frame.setVisible(true);
         frame.setLayout(new GridBagLayout());
 

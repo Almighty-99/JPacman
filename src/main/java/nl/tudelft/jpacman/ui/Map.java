@@ -20,7 +20,7 @@ public class Map {
 
         frame.setLayout(new FlowLayout());
         try {
-            frame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("src/main/resources/assets/pacmanbg.png")))));
+            frame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("src/main/resources/assets/bg2.png")))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -31,7 +31,7 @@ public class Map {
         JLabel headerLabel = new JLabel("PacMan");
         headerLabel.setFont(new Font("UglyByte.otf", Font.TYPE1_FONT, 50));
         frame.add(headerLabel, new GridBagConstraints());
-        Color headerTextColor = Color.BLACK;
+        Color headerTextColor = Color.RED;
         headerLabel.setForeground(headerTextColor);
 
 
